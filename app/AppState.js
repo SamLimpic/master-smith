@@ -1,21 +1,23 @@
-import Value from "./Models/Value.js"
+import Order from "./Models/Order.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
-  /** @type {Value[]} */
-  values = []
+  /** @type {Order[]} */
+  orders = []
 }
 
+
+// NOTE Magic, no touchy!
 export const ProxyState = new Proxy(new AppState(), {
   get(target, prop) {
     isValidProp(target, prop)
     return target[prop]
   },
-  set(target, prop, value) {
+  set(target, prop, order) {
     isValidProp(target, prop)
-    target[prop] = value
-    target.emit(prop, value)
+    target[prop] = order
+    target.emit(prop, order)
     return true
   }
 })
