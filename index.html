@@ -24,14 +24,15 @@
     </header>
 
     <main class="container-fluid">
-        <div class="row justify-content-between p-5">
+        <div class="row justify-content-between p-4">
+            <!-- NOTE Greeting -->
             <div class="col-md-4 text-center">
-                <div class="card shadow my-3 bg-warning text-center">
+                <div class="card shadow mb-3 py-2 bg-warning text-center">
                     <h3><u> Greetings Adventurer! </u></h3>
                     <h4>How may I help you today?</h4>
                 </div>
                 <div class="card p-3 bg-warning">
-                    <img src="//placehold.it/400x300" alt="">
+                    <img class="p-2" src="//placehold.it/400x300" alt="">
                     <div class="row justify-content-around pt-3">
                         <div class="col-md-3">
                             <button class="bg-primary">Pending Orders</button>
@@ -45,58 +46,112 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 card bg-warning">
+            <!-- NOTE Pending Orders -->
+            <div class="col-md-8 card bg-warning py-3">
                 <h3 class="text-center"><u> Pending Orders </u></h3>
 
                 <div id="**ORDERS**" class="row justify-content-around">
-                    <div class="col-3 card p-3 m-3">
-                        <h4 class="text-center mb-0">BRONZE AXE</h4>
-                        <h5 class="text-center"><u>FOR STEVE</u></h5>
-                        <img class="my-2" src="//placehold.it/150x150" alt="">
-                        <div id="tasks" class="row">
+                    <div class="col-5 bg-light p-3 m-3">
+                        <h4 class="text-center mb-0"><u>BRONZE AXE for STEVE</u></h4>
+                        <p class="text-center my-0">Progress: 0/6</p>
+                        <div class="row">
+                            <div class="input-group px-3">
+                                <div class="col-7"><img class="my-2 img-fluid" src="//placehold.it/300x300" alt="">
+                                    <h5 class="text-center my-3"><u>Total Cost: </u>1000 Gold</h5>
+                                </div>
+                                <div class="col-5 d-flex flex-column mt-2">
+                                    <div id="tasks">
+                                        <div class=" input-group-prepend">
+                                            <i class="fas fa-times text-danger align-self-center "></i>
+                                            <div class="input-group-text bg-transparent" style="border: none">
+                                                <input id="smelt" type="checkbox" aria-label="Task Checkbox">
+                                            </div>
+                                            <a><small><strong>Smelt Ore</strong></small></a>
+                                        </div>
 
-                            <div class="input-group">
-                                <div class="col input-group-prepend">
-                                    <div class="input-group-text bg-transparent" style="border: none">
-                                        <input type="checkbox" aria-label="Task Radio">
+                                        <div class=" input-group-prepend">
+                                            <i class="fas fa-times text-danger align-self-center "></i>
+                                            <div class="input-group-text bg-transparent" style="border: none">
+                                                <input id="shape" type="checkbox" aria-label="Task Checkbox" disabled>
+                                            </div>
+                                            <a><small><strong>Shape Metal</strong></small></a>
+                                        </div>
+
+                                        <div class=" input-group-prepend">
+                                            <i class="fas fa-times text-danger align-self-center "></i>
+                                            <div class="input-group-text bg-transparent" style="border: none">
+                                                <input id="assemble" type="checkbox" aria-label="Task Checkbox"
+                                                    disabled>
+                                            </div>
+                                            <a><small><strong>Assemble</strong></small></a>
+                                        </div>
+
+                                        <div class=" input-group-prepend">
+                                            <i class="fas fa-times text-danger align-self-center "
+                                                onclick="app.tasksController.deleteTask('${this.id}')"></i>
+                                            <div class="input-group-text bg-transparent" style="border: none">
+                                                <input id="polish" type="checkbox" aria-label="Task Checkbox" disabled>
+                                            </div>
+                                            <a><small><strong>Final Polish</strong></small></a>
+                                        </div>
+
+                                        <div class=" input-group-prepend">
+                                            <i class="fas fa-times text-danger align-self-center "
+                                                onclick="app.tasksController.deleteTask('${this.id}')"></i>
+                                            <div class="input-group-text bg-transparent" style="border: none">
+                                                <input id="jewel" type="checkbox" aria-label="Task Checkbox" disabled>
+                                            </div>
+                                            <a><small><strong>Bejeweled</strong></small></a>
+                                        </div>
+
+                                        <div class=" input-group-prepend">
+                                            <i class="fas fa-times text-danger align-self-center "
+                                                onclick="app.tasksController.deleteTask('${this.id}')"></i>
+                                            <div class="input-group-text bg-transparent" style="border: none">
+                                                <input id="enchant" type="checkbox" aria-label="Task Checkbox" disabled>
+                                            </div>
+                                            <a><small><strong>Enchanted</strong></small></a>
+                                        </div>
                                     </div>
-                                    <a>CRAFT HANDLE</a>
+
+                                    <div class="btn-group my-2">
+                                        <button type="button" class="btn btn-primary dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Special Order
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item bg-secondary my-1" href="#"><strong> Bejeweled
+                                                </strong></a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item bg-info my-1" href="#"><strong> Enchanted
+                                                </strong></a>
+                                            <a class="dropdown-item bg-warning my-1" href="#"><strong> Blessed
+                                                </strong></a>
+                                            <a class="dropdown-item bg-danger my-1" href="#"><strong> Cursed
+                                                </strong></a>
+                                        </div>
+                                    </div>
+                                    <button class="bg-success align-self-end mx-1 mt-2 pt-2">
+                                        <h5>Fill Order!</h5>
+                                    </button>
+
                                 </div>
 
-                                <div class="col input-group-prepend">
-                                    <div class="input-group-text bg-transparent" style="border: none">
-                                        <input type="checkbox" aria-label="Task Radio">
-                                    </div>
-                                    <a>SMELT BRONZE</a>
-                                </div>
-
-                                <div class="col input-group-prepend">
-                                    <div class="input-group-text bg-transparent" style="border: none">
-                                        <input type="checkbox" aria-label="Task Radio">
-                                    </div>
-                                    <a>SHARPEN</a>
-                                </div>
-
-                                <div class="col input-group-prepend">
-                                    <div class="input-group-text bg-transparent" style="border: none">
-                                        <input type="checkbox" aria-label="Task Radio">
-                                    </div>
-                                    <a>POLISH</a>
-                                </div>
                             </div>
                         </div>
-                        <div class="input-group mr-3 my-2">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-primary" type="button" id="button-addon1">ADD</button>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Special Requests"
-                                aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        </div>
-                        <button class="bg-success mt-2 text-center">COMPLETE</button>
                     </div>
 
                 </div>
             </div>
+
+            <!-- NOTE Filled Orders -->
+            <div class="col-md-8 card bg-warning py-3 d-none">
+                <h3 class="text-center"><u> Filled Orders </u></h3>
+                <div id="filled" class="row justify-content-around"></div>
+            </div>
+            <!-- NOTE Place an Order -->
+            <div class="col-md-8 card bg-warning py-3 d-none">
+                <h3 class="text-center"><u> Place an Order </u></h3>
 
     </main>
 

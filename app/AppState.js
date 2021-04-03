@@ -1,10 +1,20 @@
 import Order from "./Models/Order.js"
+import Task from "./Models/Task.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
+
   /** @type {Order[]} */
   orders = []
+
+  /** @type {Task[]} */
+  tasks = [
+    new Task('Smelt Ore', 'smelt'),
+    new Task('Shape Metal', 'shape'),
+    new Task('Assemble', 'assemble'),
+    new Task('Final Polish', 'polish'),
+  ]
 }
 
 
