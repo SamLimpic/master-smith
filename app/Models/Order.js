@@ -14,21 +14,23 @@ export default class Order {
 
     get OrderTemplate() {
 
-        return /*html*/`
+        return `
         <div class="col-5 bg-light p-3 m-3">
             <h4 class="text-center mb-0"><u>${this.material} ${this.weapon} for ${this.client}</u></h4>
             <p class="text-center my-0">Progress: ${this.completed}/${this.total}</p>
             <div class="row">
                 <div class="input-group px-3">
                     <div class="col-7">
-                    <img id="${this.id}" {class="my-2 img-fluid" src="//placehold.it/300x300" alt="">
+                        <div id="${this.id}">
+                            <img class="my-2 img-fluid" src="//placehold.it/300x300" alt="">
+                        </div>
                         <h5 class="text-center my-3"><u>Total Cost:</u> ${this.price} Gold</h5>
-                    </div>
+                        </div>
                     <div class="col-5 d-flex flex-column mt-2">
 
                         <div id="tasks"></div>
                             ${this.Tasks}
-                            
+
                         <div class="btn-group my-2">
                             <button type="button" class="btn btn-primary dropdown-toggle"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

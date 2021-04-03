@@ -10685,6 +10685,7 @@ h3 {
   }
 }
 body {
+  font-family: "Press Start 2P", cursive;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -10693,6 +10694,38 @@ body {
 
 main {
   flex-grow: 1;
+}
+
+.fixed-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.drop-shadow {
+  filter: drop-shadow(3px 3px 3px black);
+}
+
+.char-shadow {
+  filter: drop-shadow(25px -5px 25px black);
+}
+
+.bg-main {
+  background: url(../img/blacksmith.PNG) no-repeat center center;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+}
+
+.bg-parchment {
+  background: url(../img/parchment.png);
+  border: 10px;
+  border-color: #a36024;
+  border-style: solid;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,9 +7,7 @@ function _draw() {
   let orders = ProxyState.orders
   let orderTemplate = ''
   orders.forEach(order => orderTemplate += order.OrderTemplate)
-  document.getElementById("orders").innerHTML = /*html*/`
-  
-  `
+  document.getElementById("orders").innerHTML = orderTemplate
 }
 
 //Public
