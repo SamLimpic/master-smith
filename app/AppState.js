@@ -8,6 +8,8 @@ class AppState extends EventEmitter {
   /** @type {Order[]} */
   orders = []
 
+  filledOrders = []
+
   /** @type {Task[]} */
   tasks = [
     new Task('Smelt Ore', 'smelt'),

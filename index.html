@@ -22,14 +22,15 @@
             <a class="navbar-brand" href="#">
                 <span class="ml-2"> <i class="fas fa-tools mr-3"></i> Master Smith</span>
             </a>
-            <button class="card text-center bg-warning py-2">Back to Start</button>
+            <button class="card text-center text-light bg-dark py-2" onclick="app.ordersController.backToStart()">
+                Back to Start</button>
         </nav>
     </header>
 
     <main class="container-fluid bg-main">
         <div class="row justify-content-between p-4">
             <!-- NOTE Greeting -->
-            <div class="col-md-4 text-center">
+            <div id="greeting" class="col-md-4 text-center">
                 <div class="row">
                     <div class="col">
                         <div class="mt-3 pt-2 bg-transparent text-light text-center drop-shadow">
@@ -38,13 +39,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row align-items-center">
 
                     <div class="col-7"><img class="img-fluid char-shadow" src="/assets/img/vendor.png" alt=""></div>
                     <div class="col-5">
-                        <button class="bg-danger w-100 my-3 py-2 text-light card shadow">Pending Orders</button>
-                        <button class="bg-success w-100 my-3 py-2 px-4 text-light card shadow">Place Order</button>
-                        <button class="bg-info w-100 my-3 py-2 text-light card shadow">Filled Orders</button>
+                        <button class="bg-danger w-100 my-3 py-2 text-light card shadow"
+                            onclick="app.ordersController.showPending()">Pending Orders</button>
+                        <button class="bg-success w-100 my-3 py-2 px-4 text-light card shadow"
+                            onclick="app.ordersController.showPlace()">Place Order</button>
+                        <button class="bg-info w-100 my-3 py-2 text-light card shadow"
+                            onclick="app.ordersController.showFilled()">Filled Orders</button>
 
 
                     </div>
@@ -54,7 +58,7 @@
             <div id="pending" class="col card bg-transparent py-3 d-none">
                 <h4 class="text-center text-light drop-shadow"><u> Pending Orders </u></h4>
 
-                <div id="**ORDERS**" class="row justify-content-around">
+                <div id="orders" class="row justify-content-around">
                     <div class="col-md-3 p-3 my-2 bg-parchment">
                         <h6 class="text-center mb-0"><u>BRONZE AXE for STEVE</u></h6>
                         <p class="text-center my-0">Progress: 0/6</p>
@@ -125,8 +129,9 @@
                                 <h6 class="text-center my-3">1000 Gold</h6>
                             </div>
                             <div class="col-8">
-                                <button class="bg-success align-self-end text-light card shadow w-100 mt-2 pt-2">
-                                    <h5>Complete Order!</h5>
+                                <button class="bg-success align-self-end text-light card shadow w-100 mt-2 pt-2"
+                                    onclick="fillOrder(id)">
+                                    <h5>Fill Order</h5>
                                 </button>
                             </div>
                         </div>
@@ -135,19 +140,18 @@
             </div>
 
             <!-- NOTE Filled Orders -->
-            <div id="filled" class="col-md-8 card bg-warning py-3 d-none">
+            <div id="filled" class="col-md-8 card bg-transparent py-3 d-none">
                 <h3 class="text-center"><u> Filled Orders </u></h3>
                 <div id="filled" class="row justify-content-around"></div>
             </div>
             <!-- NOTE Place an Order -->
-            <div class="col-md-6 ">
-                <form id="place" class="bg-parchment card px-4 py-3 w-50 ml-5"
-                    onsubmit="app.ordersController.placeOrder()">
-                    <h5 class="text-center"><u>Place an Order</u></h5>
-                    <div class="form-group px-4">
+            <div id="place" class="col-md-6 d-none">
+                <form class=" px-4 py-3 w-50 ml-5" onsubmit="app.ordersController.addOrder()">
+                    <h5 class="text-center text-light drop-shadow"><u>Place an Order</u></h5>
+                    <div class="form-group p-3 bg-parchment card">
                         <div class="m-2">
-                            <label for="name">Who are you?</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name"
+                            <label for="client">Who are you?</label>
+                            <input type="text" name="client" id="client" class="form-control" placeholder="Name"
                                 aria-describedby="helpId" required min="3" max="15">
                         </div>
                         <div class="m-2">
@@ -168,8 +172,8 @@
                             </select>
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="btn btn-success w-100" title='place order'>Place an
-                                Order</button>
+                            <button type="submit" class="btn btn-success mb-2 w-100 text-center"
+                                title='place order'>Place an Order</button>
                         </div>
                     </div>
                 </form>

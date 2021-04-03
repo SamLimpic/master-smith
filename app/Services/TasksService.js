@@ -2,8 +2,13 @@ import { ProxyState } from "../AppState.js";
 import Task from "../Models/Task.js";
 
 class TasksService {
-  addTask() {
-    ProxyState.tasks = [...ProxyState.tasks, new Task({ title: Math.random() })]
+  checkEnable(str) {
+    let index = (ProxyState.tasks.findIndex(task => task.stage = str)) + 1
+    let plusOne = ProxyState.tasks[index].stage
+    document.getElementById(plusOne).disabled = false
+  }
+  addTask(id, str) {
+    ProxyState.tasks = [...ProxyState.tasks, new Task((str).toUpperCase(), str, id)]
   }
 }
 

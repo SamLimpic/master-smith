@@ -1,8 +1,8 @@
 import { ProxyState } from "../AppState.js"
-import { generateId } from "../Utils/GenerateId"
+import { generateId } from "../Utils/GenerateId.js"
 
 export default class Task {
-    constructor(name, stage, orderId = null) {
+    constructor(name, stage, orderId) {
         this.name = name
         this.stage = stage
         this.orderId = orderId
@@ -15,7 +15,7 @@ export default class Task {
             <div class=" input-group-prepend">
                 <i class="fas fa-times text-danger align-self-center" onclick="app.tasksController.removeTask('${this.id}')"></i>
                 <div class="input-group-text bg-transparent" style="border: none">
-                    <input id="${this.stage}" type="checkbox" aria-label="Task Checkbox" onclick="app.tasksController.checkEnable('${this.stage}')">
+                    <input id="${this.stage}" type="checkbox" aria-label="Task Checkbox" onclick="app.tasksController.checkEnable('${this.stage}')" disabled>
                 </div>
                 <a><small><strong>${this.name}</strong></small></a>
             </div>
