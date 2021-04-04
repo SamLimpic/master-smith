@@ -10711,10 +10711,25 @@ main {
 }
 
 .bg-main {
-  background: url(../img/blacksmith.PNG) no-repeat center center;
+  background: url(../img/blacksmith.png) no-repeat center center;
   background-size: cover;
   background-position: bottom;
   overflow: hidden;
+}
+
+.bg-template:hover {
+  background: url(../img/delete.png) no-repeat center center;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+}
+
+.bg-template {
+  background: url(../img/template.png) no-repeat center center;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .bg-parchment {

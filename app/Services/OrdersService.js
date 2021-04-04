@@ -13,17 +13,24 @@ class OrdersService {
   addOrder(newOrder) {
     document.getElementById('greeting').classList.add('d-none')
     document.getElementById('place').classList.add('d-none')
+    document.getElementById('place').classList.remove('d-flex')
     document.getElementById('pending').classList.remove('d-none')
-    ProxyState.orders = [...ProxyState.orders, new Order(newOrder.client, newOrder.weapon, newOrder.material)]
+    let price = 0
+    if (newOrder.material == "Bronze") {
+      price = 5
+    } else if (newOrder.material == "Iron") {
+      price = 10
+    } else if (newOrder.material == "Steel") {
+      price = 15
+    }
+    ProxyState.orders = [...ProxyState.orders, new Order(newOrder.client, newOrder.weapon, newOrder.material, price)]
     let newId = ProxyState.orders[ProxyState.orders.length - 1].id
-    ProxyState.tasks.push(
-      new Task('Smelt', 'smelt', newId),
-      new Task('Shape', 'shape', newId),
-      new Task('Assemble', 'assemble', newId),
-      new Task('Polish', 'polish', newId)
-    )
-    document.getElementById('smelt').disabled = false
-    ProxyState.orders = ProxyState.orders
+    ProxyState.tasks = [...ProxyState.tasks,
+    new Task('Smelt', 'smelt', newId),
+    new Task('Shape', 'shape', newId),
+    new Task('Assemble', 'assemble', newId),
+    new Task('Polish', 'polish', newId)
+    ]
     saveState()
   }
 }

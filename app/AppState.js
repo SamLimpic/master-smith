@@ -11,12 +11,7 @@ class AppState extends EventEmitter {
   filledOrders = []
 
   /** @type {Task[]} */
-  tasks = [
-    new Task('Smelt Ore', 'smelt'),
-    new Task('Shape Metal', 'shape'),
-    new Task('Assemble', 'assemble'),
-    new Task('Final Polish', 'polish'),
-  ]
+  tasks = []
 }
 
 

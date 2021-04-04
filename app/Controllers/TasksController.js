@@ -13,8 +13,8 @@ export default class TasksController {
     tasksService.addTask(id, str)
   }
 
-  checkEnable(str) {
-    tasksService.checkEnable(str)
+  boxCheck(id, orderId, str) {
+    tasksService.boxCheck(id, orderId, str)
   }
 
 }

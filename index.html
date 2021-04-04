@@ -55,120 +55,42 @@
                 </div>
             </div>
             <!-- NOTE Pending Orders -->
-            <div id="pending" class="col card bg-transparent py-3 d-none">
+            <div id="pending" class="col bg-transparent py-3 d-none">
                 <h4 class="text-center text-light drop-shadow"><u> Pending Orders </u></h4>
 
-                <div id="orders" class="row justify-content-around">
-                    <div class="col-md-3 p-3 my-2 bg-parchment">
-                        <h6 class="text-center mb-0"><u>BRONZE AXE for STEVE</u></h6>
-                        <p class="text-center my-0">Progress: 0/6</p>
-                        <div class="row align-items-center px-2">
-                            <div class="col-md-6 input-group ">
-                                <img class="my-2 img-fluid shadow" src="/assets/img/template.png" alt="">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary dropdown-toggle shadow my-2"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <small>Add-Ons</small>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item bg-info" href="#"><small>Enchant</small></a>
-                                        <a class="dropdown-item bg-warning" href="#"><small>Bless</small></a>
-                                        <a class="dropdown-item bg-danger" href="#"><small>Curse</small></a>
-                                    </div>
-                                </div>
-                                <div id="tasks">
-                                    <div class=" input-group-prepend">
-                                        <i class="fas fa-times text-danger align-self-center "></i>
-                                        <div class="input-group-text bg-transparent" style="border: none">
-                                            <input id="smelt" type="checkbox" aria-label="Task Checkbox">
-                                        </div>
-                                        <a><small><strong>Smelt</strong></small></a>
-                                    </div>
-
-                                    <div class=" input-group-prepend">
-                                        <i class="fas fa-times text-danger align-self-center "></i>
-                                        <div class="input-group-text bg-transparent" style="border: none">
-                                            <input id="shape" type="checkbox" aria-label="Task Checkbox" disabled>
-                                        </div>
-                                        <a><small><strong>Shape</strong></small></a>
-                                    </div>
-
-                                    <div class=" input-group-prepend">
-                                        <i class="fas fa-times text-danger align-self-center "></i>
-                                        <div class="input-group-text bg-transparent" style="border: none">
-                                            <input id="assemble" type="checkbox" aria-label="Task Checkbox" disabled>
-                                        </div>
-                                        <a><small><strong>Assemble</strong></small></a>
-                                    </div>
-
-                                    <div class=" input-group-prepend">
-                                        <i class="fas fa-times text-danger align-self-center "
-                                            onclick="app.tasksController.deleteTask('${this.id}')"></i>
-                                        <div class="input-group-text bg-transparent" style="border: none">
-                                            <input id="polish" type="checkbox" aria-label="Task Checkbox" disabled>
-                                        </div>
-                                        <a><small><strong>Polish</strong></small></a>
-                                    </div>
-
-                                    <div class=" input-group-prepend">
-                                        <i class="fas fa-times text-danger align-self-center "
-                                            onclick="app.tasksController.deleteTask('${this.id}')"></i>
-                                        <div class="input-group-text bg-transparent" style="border: none">
-                                            <input id="polish" type="checkbox" aria-label="Task Checkbox" disabled>
-                                        </div>
-                                        <a><small><strong>Polish</strong></small></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row align-items-center m-3">
-                            <div class="col-4">
-                                <h6 class="text-center my-3">1000 Gold</h6>
-                            </div>
-                            <div class="col-8">
-                                <button class="bg-success align-self-end text-light card shadow w-100 mt-2 pt-2"
-                                    onclick="fillOrder(id)">
-                                    <h5>Fill Order</h5>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="orders" class="row justify-content-around"></div>
             </div>
 
             <!-- NOTE Filled Orders -->
             <div id="filled" class="col-md-8 card bg-transparent py-3 d-none">
-                <h3 class="text-center"><u> Filled Orders </u></h3>
+                <h3 class="text-center text-light drop-shadow"><u> Filled Orders </u></h3>
                 <div id="filled" class="row justify-content-around"></div>
             </div>
             <!-- NOTE Place an Order -->
-            <div id="place" class="col-md-6 d-none">
+            <div id="place" class="col-md-8 justify-content-center d-none">
                 <form class=" px-4 py-3 w-50 ml-5" onsubmit="app.ordersController.addOrder()">
                     <h5 class="text-center text-light drop-shadow"><u>Place an Order</u></h5>
                     <div class="form-group p-3 bg-parchment card">
                         <div class="m-2">
-                            <label for="client">Who are you?</label>
+                            <label for="client">What is your name?</label>
                             <input type="text" name="client" id="client" class="form-control" placeholder="Name"
                                 aria-describedby="helpId" required min="3" max="15">
                         </div>
                         <div class="m-2">
-                            <label for="weapon">What are you looking for?</label>
+                            <label for="weapon">What weapon are you looking for?</label>
                             <select class="custom-select" id="weapon" aria-label="weapon select" required>
-                                <option selected value="longsword">Longsword</option>
-                                <option value="warhammer">Warhammer</option>
-                                <option value="battleaxe">Battleaxe</option>
-                                <option value="lance">Lance</option>
+                                <option selected value="Longsword">Longsword</option>
+                                <option value="Warhammer">Warhammer</option>
+                                <option value="Battleaxe">Battleaxe</option>
+                                <option value="Lance">Lance</option>
                             </select>
                         </div>
                         <div class="m-2">
-                            <label for="material">Made out of what material?</label>
+                            <label for="material">What would you like it made from?</label>
                             <select class="custom-select" id="material" aria-label="material select" required>
-                                <option selected value="bronze">Bronze</option>
-                                <option value="iron">Iron</option>
-                                <option value="steel">Steel</option>
+                                <option selected value="Bronze">Bronze</option>
+                                <option value="Iron">Iron</option>
+                                <option value="Steel">Steel</option>
                             </select>
                         </div>
                         <div class="mt-4">

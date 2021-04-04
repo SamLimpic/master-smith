@@ -10,10 +10,26 @@ export function saveState() {
     }))
 }
 
+export function saveCheck(id) {
+    let taskId = ProxyState.tasks.find(task => task.id == id)
+    let checkTask = document.getElementById(taskId.id)
+    // @ts-ignore
+    localStorage.setItem(taskId.id, checkTask.checked)
+}
+
 export function loadState() {
     let data = JSON.parse(localStorage.getItem('master-smith'))
     if (data) {
-        ProxyState.orders = data.orders.map(order => new Order(order.name, order.size, order.id));
-        ProxyState.tasks = data.tasks.map(ing => new Task(ing.name, ing.orderId, ing.id));
+        ProxyState.orders = data.orders.map(order => new Order(order.client, order.weapon, order.material, order.price, order.completed, order.total, order.id));
+        ProxyState.tasks = data.tasks.map(task => new Task(task.name, task.orderId, task.orderId, task.id));
     }
+}
+
+export function loadChecked() {
+    ProxyState.tasks.forEach(task => {
+        // @ts-ignore
+        let checkTask = JSON.parse(localStorage.getItem(`${task.boxId}`).checked)
+        // @ts-ignore
+        document.getElementById(`${task.boxId}`).checked = checkTask
+    })
 }

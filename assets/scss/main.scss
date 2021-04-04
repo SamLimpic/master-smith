@@ -4,6 +4,7 @@
 @import "./custom.scss";
 @import "./loaders.scss";
 
+
 body {
   font-family: 'Press Start 2P', cursive;
   display: flex;
@@ -31,10 +32,25 @@ main {
 }
 
 .bg-main {
-    background: url(../img/blacksmith.PNG) no-repeat center center;
+    background: url(../img/blacksmith.png) no-repeat center center;
     background-size: cover;
     background-position:bottom;
     overflow: hidden;
+}
+
+.bg-template:hover {
+  background: url(../img/delete.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    overflow: hidden;
+}
+
+.bg-template {
+    background: url(../img/template.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
 }
 
 .bg-parchment {
@@ -47,4 +63,3 @@ main {
   width: 100%;
   overflow: hidden;
 }
-

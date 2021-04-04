@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { ordersService } from "../Services/OrdersService.js";
-import { loadState } from "../Utils/LocalStorage.js";
+import { loadChecked, loadState } from "../Utils/LocalStorage.js";
 
 
 //Private
@@ -47,6 +47,7 @@ export default class OrdersController {
     document.getElementById('greeting').classList.add('d-none')
     document.getElementById('pending').classList.remove('d-none')
     document.getElementById('place').classList.add('d-none')
+    document.getElementById('place').classList.remove('d-flex')
     document.getElementById('filled').classList.add('d-none')
   }
 
@@ -54,6 +55,7 @@ export default class OrdersController {
     document.getElementById('greeting').classList.remove('d-none')
     document.getElementById('pending').classList.add('d-none')
     document.getElementById('place').classList.remove('d-none')
+    document.getElementById('place').classList.add('d-flex')
     document.getElementById('filled').classList.add('d-none')
   }
 
@@ -61,6 +63,7 @@ export default class OrdersController {
     document.getElementById('greeting').classList.remove('d-none')
     document.getElementById('pending').classList.add('d-none')
     document.getElementById('place').classList.add('d-none')
+    document.getElementById('place').classList.remove('d-flex')
     document.getElementById('filled').classList.remove('d-none')
   }
 
@@ -68,6 +71,7 @@ export default class OrdersController {
     document.getElementById('greeting').classList.remove('d-none')
     document.getElementById('pending').classList.add('d-none')
     document.getElementById('place').classList.add('d-none')
+    document.getElementById('place').classList.remove('d-flex')
     document.getElementById('filled').classList.add('d-none')
   }
 
