@@ -9,7 +9,7 @@ class AppState extends EventEmitter {
   /** @type {Order[]} */
   orders = []
 
-  /** @type {FilledOrder[] */
+  /** @type {FilledOrder[]} */
   filledOrders = []
 
   /** @type {Task[]} */

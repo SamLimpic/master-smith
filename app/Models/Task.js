@@ -1,6 +1,4 @@
-import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
-import { saveCheck } from "../Utils/LocalStorage.js"
 
 export default class Task {
     constructor(name, stage, orderId, id = generateId(), checked = '', disabled = 'disabled', deleted = 'text-transparent') {
