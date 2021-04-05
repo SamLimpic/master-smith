@@ -6,11 +6,13 @@ import { loadChecked, loadState } from "../Utils/LocalStorage.js";
 //Private
 function _draw() {
   let orders = ProxyState.orders
+  let filled = ProxyState.filledOrders
   let orderTemplate = ''
   let filledTemplate = ''
   orders.forEach(order => orderTemplate += order.OrderTemplate)
+  filled.forEach(filled => filledTemplate += filled.FilledTemplate)
   document.getElementById("orders").innerHTML = orderTemplate
-
+  document.getElementById("filledOrders").innerHTML = filledTemplate
 }
 
 //Public
@@ -28,7 +30,8 @@ export default class OrdersController {
     let newOrder = {
       client: form['client'].value,
       weapon: form['weapon'].value,
-      material: form['material'].value
+      material: form['material'].value,
+      time: form['time'].value
     }
     ordersService.addOrder(newOrder)
     // @ts-ignore
@@ -43,8 +46,11 @@ export default class OrdersController {
     ordersService.deleteOrder(id)
   }
 
+  deliverOrder(id) {
+    ordersService.deliverOrder(id)
+  }
+
   showPending() {
-    document.getElementById('greeting').classList.add('d-none')
     document.getElementById('pending').classList.remove('d-none')
     document.getElementById('place').classList.add('d-none')
     document.getElementById('place').classList.remove('d-flex')
@@ -52,7 +58,6 @@ export default class OrdersController {
   }
 
   showPlace() {
-    document.getElementById('greeting').classList.remove('d-none')
     document.getElementById('pending').classList.add('d-none')
     document.getElementById('place').classList.remove('d-none')
     document.getElementById('place').classList.add('d-flex')
@@ -60,7 +65,6 @@ export default class OrdersController {
   }
 
   showFilled() {
-    document.getElementById('greeting').classList.remove('d-none')
     document.getElementById('pending').classList.add('d-none')
     document.getElementById('place').classList.add('d-none')
     document.getElementById('place').classList.remove('d-flex')
@@ -68,7 +72,6 @@ export default class OrdersController {
   }
 
   backToStart() {
-    document.getElementById('greeting').classList.remove('d-none')
     document.getElementById('pending').classList.add('d-none')
     document.getElementById('place').classList.add('d-none')
     document.getElementById('place').classList.remove('d-flex')

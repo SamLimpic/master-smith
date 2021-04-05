@@ -38,13 +38,6 @@ main {
     overflow: hidden;
 }
 
-.bg-template:hover {
-  background: url(../img/delete.png) no-repeat center center;
-    background-size: cover;
-    background-position:bottom;
-    overflow: hidden;
-}
-
 .bg-template {
     background: url(../img/template.png) no-repeat center center;
     background-size: cover;
@@ -53,13 +46,58 @@ main {
     transition: all .5s ease-in-out;
 }
 
+.bg-template:hover {
+  background: url(../img/delete.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    overflow: hidden;
+}
+
+.bg-filled-template {
+    background: url(../img/template.png) no-repeat center center;
+    background-size: cover;
+    background-position:bottom;
+    overflow: hidden;
+}
+
 .bg-parchment {
   background: url(../img/parchment.png);
-  border: 10px;
-  border-color: #a36024;
-  border-style: solid;
   background-size:cover;
   background-position: center;
   width: 100%;
   overflow: hidden;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.bord-info {
+  border: 15px;
+  border-color: var(--info);
+  border-style:groove;
+}
+
+.bord-success {
+  border: 15px;
+  border-color: var(--success);
+  border-style: groove;
+}
+
+.bord-secondary {
+  border: 15px;
+  border-color: var(--secondary);
+  border-style: groove;
+}
+
+.bord-warning {
+  border: 15px;
+  border-color: var(--warning);
+  border-style: groove;
+}
+
+.bord-danger {
+  border: 15px;
+  border-color: var(--danger);
+  border-style: groove;
 }

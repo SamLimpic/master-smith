@@ -55,17 +55,19 @@
                 </div>
             </div>
             <!-- NOTE Pending Orders -->
-            <div id="pending" class="col bg-transparent py-3 d-none">
-                <h4 class="text-center text-light drop-shadow"><u> Pending Orders </u></h4>
+            <div id="pending" class="col-md-8 bg-transparent py-3 d-none">
+                <h3 class="text-center text-light drop-shadow"><u> Pending Orders </u></h3>
 
                 <div id="orders" class="row justify-content-around"></div>
             </div>
 
             <!-- NOTE Filled Orders -->
-            <div id="filled" class="col-md-8 card bg-transparent py-3 d-none">
+            <div id="filled" class="col-md-8 bg-transparent py-3 d-none">
                 <h3 class="text-center text-light drop-shadow"><u> Filled Orders </u></h3>
-                <div id="filled" class="row justify-content-around"></div>
+                <div id="filledOrders" class="row justify-content-center">
+                </div>
             </div>
+
             <!-- NOTE Place an Order -->
             <div id="place" class="col-md-8 justify-content-center d-none">
                 <form class=" px-4 py-3 w-50 ml-5" onsubmit="app.ordersController.addOrder()">
@@ -93,9 +95,20 @@
                                 <option value="Steel">Steel</option>
                             </select>
                         </div>
+                        <div class="m-2">
+                            <label for="time">When do you need it?</label>
+                            <select class="custom-select" id="time" aria-label="weapon select" required>
+                                <option selected value="bord-info">Whenever</option>
+                                <option value="bord-success">Next Week</option>
+                                <option value="bord-secondary">This Week</option>
+                                <option value="bord-warning">Today</option>
+                                <option value="bord-danger">Yesterday</option>
+                            </select>
+                        </div>
                         <div class="mt-4">
                             <button type="submit" class="btn btn-success mb-2 w-100 text-center"
-                                title='place order'>Place an Order</button>
+                                title='place order'>Place
+                                an Order</button>
                         </div>
                     </div>
                 </form>
@@ -112,6 +125,12 @@
         </div>
     </footer>
 
+    <audio src="/assets/audio/bg-music.mp3" autoplay loop></audio>
+    <audio id="menu-button" src="/assets/audio/place-order.wav"></audio>
+    <audio id="deliver" src="/assets/audio/deliver.wav"></audio>
+    <audio id="checkbox" src="/assets/audio/checkbox.wav"></audio>
+    <audio id="enchant" src="/assets/audio/enchant.wav"></audio>
+    <audio id="delete" src="/assets/audio/delete.wav"></audio>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

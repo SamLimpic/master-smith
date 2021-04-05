@@ -17,4 +17,7 @@ export default class TasksController {
     tasksService.boxCheck(id, orderId, str)
   }
 
+  deleteTask(id, orderId, str) {
+    tasksService.deleteTask(id, orderId, str)
+  }
 }

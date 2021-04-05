@@ -1,3 +1,4 @@
+import FilledOrder from "./Models/FilledOrder.js"
 import Order from "./Models/Order.js"
 import Task from "./Models/Task.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
@@ -8,6 +9,7 @@ class AppState extends EventEmitter {
   /** @type {Order[]} */
   orders = []
 
+  /** @type {FilledOrder[] */
   filledOrders = []
 
   /** @type {Task[]} */
