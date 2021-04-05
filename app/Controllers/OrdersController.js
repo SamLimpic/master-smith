@@ -55,6 +55,8 @@ export default class OrdersController {
     document.getElementById('place').classList.add('d-none')
     document.getElementById('place').classList.remove('d-flex')
     document.getElementById('filled').classList.add('d-none')
+    // @ts-ignore
+    document.getElementById("menu-button").play()
   }
 
   showPlace() {
@@ -62,6 +64,8 @@ export default class OrdersController {
     document.getElementById('place').classList.remove('d-none')
     document.getElementById('place').classList.add('d-flex')
     document.getElementById('filled').classList.add('d-none')
+    // @ts-ignore
+    document.getElementById("menu-button").play()
   }
 
   showFilled() {
@@ -69,6 +73,8 @@ export default class OrdersController {
     document.getElementById('place').classList.add('d-none')
     document.getElementById('place').classList.remove('d-flex')
     document.getElementById('filled').classList.remove('d-none')
+    // @ts-ignore
+    document.getElementById("menu-button").play()
   }
 
   backToStart() {
@@ -76,6 +82,8 @@ export default class OrdersController {
     document.getElementById('place').classList.add('d-none')
     document.getElementById('place').classList.remove('d-flex')
     document.getElementById('filled').classList.add('d-none')
+    // @ts-ignore
+    document.getElementById("menu-button").play()
   }
 
 }
