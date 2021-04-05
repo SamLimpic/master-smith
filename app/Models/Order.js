@@ -23,7 +23,7 @@ export default class Order {
                 <p class="text-center my-0">Progress: ${this.completed}/${this.total}</p>
                 <div class="row align-items-center px-2">
                     <div id="" class="col-md-6 input-group">
-                        <img class="my-2 img-fluid shadow bg-template" src="/assets/img/${this.imgId}.png" alt="" onclick="app.ordersController.deleteOrder('${this.id}')">
+                        <img class="my-2 img-fluid shadow bg-template" src="./assets/img/${this.imgId}.png" alt="" onclick="app.ordersController.deleteOrder('${this.id}')">
                     </div>
                     <div class="col-md-6">
                         <div class="btn-group">
