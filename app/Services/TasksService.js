@@ -33,16 +33,18 @@ class TasksService {
     if (message == true) {
       let parentOrder = ProxyState.orders.find(order => order.id == orderId)
       let taskArr = ProxyState.tasks.filter(task => task.orderId == orderId)
-      let indexMinusOne = (taskArr.findIndex(task => task.stage == str)) - 1
+      let indexMinusOne = (taskArr.findIndex(task => task.id == id)) - 1
       parentOrder.completed--
       parentOrder.total--
       parentOrder.price -= 5
       if (str == "enchanted" || str == "blessed" || str == "cursed") {
         parentOrder.price -= 20
+        // @ts-ignore
+        parentOrder.disabled = ''
       }
       if (taskArr[indexMinusOne]) {
         parentOrder.imgId = `${parentOrder.material.toLowerCase()}-${parentOrder.weapon.toLowerCase()}-${taskArr[indexMinusOne].stage.toLowerCase()}`
-        taskArr[indexMinusOne].stage = ''
+        taskArr[indexMinusOne].checked = ''
       } else {
         parentOrder.imgId = 'template'
       }

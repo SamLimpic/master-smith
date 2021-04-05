@@ -62,6 +62,9 @@ main {
 
 .bg-parchment {
   background: url(../img/parchment.png);
+  border: 15px;
+  border-color:saddlebrown;
+  border-style: groove;
   background-size:cover;
   background-position: center;
   width: 100%;
@@ -70,6 +73,10 @@ main {
 
 .text-transparent {
   color: transparent;
+}
+
+.text-saddle {
+  color: saddlebrown;
 }
 
 .bord-info {
