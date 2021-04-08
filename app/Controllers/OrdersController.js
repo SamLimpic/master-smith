@@ -36,6 +36,7 @@ export default class OrdersController {
     ordersService.addOrder(newOrder)
     // @ts-ignore
     form.reset()
+
   }
 
   fillOrder(id) {
